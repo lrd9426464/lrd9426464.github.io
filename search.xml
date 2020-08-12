@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
+<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
+]]></content>
+  </entry>
+  <entry>
     <title>ES6新特性</title>
     <url>/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><h4 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h4><p>函数的形参可以设置默认值</p>
@@ -24,13 +31,6 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
-<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
 ]]></content>
   </entry>
 </search>
