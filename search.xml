@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ES6新特性</title>
+    <title>ES6ES7新特性</title>
     <url>/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><h4 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h4><p>函数的形参可以设置默认值</p>
+    <content><![CDATA[<h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><blockquote>
+<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><h4 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h4><p>函数的形参可以设置默认值</p>
 <h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>ES6增加了两种声明变量的方式，其中let声明的变量不会被声明提前，const声明的变量不允许修改</p>
 <h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><h4 id="for…of…遍历查询"><a href="#for…of…遍历查询" class="headerlink" title="for…of…遍历查询"></a>for…of…遍历查询</h4><h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>特例: 只有不希望函数内this与函数外this保持一致时，才不能用箭头函数简写</p>
-<h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><h4 id="展开运算符（用连续的三个点（…）表示）"><a href="#展开运算符（用连续的三个点（…）表示）" class="headerlink" title="展开运算符（用连续的三个点（…）表示）"></a>展开运算符（用连续的三个点（…）表示）</h4><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+<h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><h4 id="展开运算符（用连续的三个点（…）表示）"><a href="#展开运算符（用连续的三个点（…）表示）" class="headerlink" title="展开运算符（用连续的三个点（…）表示）"></a>展开运算符（用连续的三个点（…）表示）</h4></blockquote>
+<h2 id="ES7新特性"><a href="#ES7新特性" class="headerlink" title="ES7新特性"></a>ES7新特性</h2><blockquote>
+<p>1.数组中添加了includes方法，该方法可以判断数组中是否含有指定数据，返回结果为布尔类型，如果存在，返回true；否则返回false。</p>
+<p>2.增加了指数运算符（**）</p>
+</blockquote>
+]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
         <tag>前端</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
-<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
-]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -38,5 +37,24 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
+<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
 </search>

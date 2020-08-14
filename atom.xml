@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-12T10:29:15.672Z</updated>
+  <updated>2020-08-14T08:40:51.025Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ES6新特性</title>
+    <title>ES6ES7新特性</title>
     <link href="http://yoursite.com/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     <id>http://yoursite.com/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</id>
     <published>2020-08-11T04:58:35.000Z</published>
-    <updated>2020-08-12T10:29:15.672Z</updated>
+    <updated>2020-08-14T08:40:51.025Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;模板字符串&quot;&gt;&lt;a href=&quot;#模板字符串&quot; class=&quot;headerlink&quot; title=&quot;模板字符串&quot;&gt;&lt;/a&gt;模板字符串&lt;/h4&gt;&lt;h4 id=&quot;参数增强&quot;&gt;&lt;a href=&quot;#参数增强&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;ES6新特性&quot;&gt;&lt;a href=&quot;#ES6新特性&quot; class=&quot;headerlink&quot; title=&quot;ES6新特性&quot;&gt;&lt;/a&gt;ES6新特性&lt;/h2&gt;&lt;blockquote&gt;
+&lt;h4 id=&quot;模板字符串&quot;&gt;&lt;a href=&quot;#模板字符串&quot;</summary>
         
       
     
@@ -46,7 +47,7 @@
     <link href="http://yoursite.com/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-07-26T07:45:26.000Z</published>
-    <updated>2020-08-12T10:21:40.147Z</updated>
+    <updated>2020-08-14T08:27:00.356Z</updated>
     
     
       
@@ -60,6 +61,10 @@
     
     
     
+    <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
@@ -68,7 +73,7 @@
     <link href="http://yoursite.com/2020/07/26/hello-world/"/>
     <id>http://yoursite.com/2020/07/26/hello-world/</id>
     <published>2020-07-26T07:34:09.531Z</published>
-    <updated>2020-07-26T07:34:09.531Z</updated>
+    <updated>2020-08-14T08:27:07.511Z</updated>
     
     
       
@@ -81,6 +86,10 @@
     
     
     
+    <category term="测试" scheme="http://yoursite.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
