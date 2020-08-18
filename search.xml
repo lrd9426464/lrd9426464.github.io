@@ -45,6 +45,19 @@
       </tags>
   </entry>
   <entry>
+    <title>str</title>
+    <url>/2020/08/18/str/</url>
+    <content><![CDATA[<h3 id="面试：JS计算一个字符串中每个字符出现的次数"><a href="#面试：JS计算一个字符串中每个字符出现的次数" class="headerlink" title="面试：JS计算一个字符串中每个字符出现的次数"></a>面试：JS计算一个字符串中每个字符出现的次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"jintiantianqizhenbucuo"</span>;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> s <span class="keyword">of</span> str)&#123;</span><br><span class="line">   <span class="keyword">if</span>(obj[s]==<span class="literal">undefined</span>)&#123;</span><br><span class="line">		obj[s]=<span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		obj[s]++;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
