@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>str</title>
+    <url>/2020/08/18/str/</url>
+    <content><![CDATA[<h3 id="面试：JS计算一个字符串中每个字符出现的次数"><a href="#面试：JS计算一个字符串中每个字符出现的次数" class="headerlink" title="面试：JS计算一个字符串中每个字符出现的次数"></a>面试：JS计算一个字符串中每个字符出现的次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"jintiantianqizhenbucuo"</span>;</span><br><span class="line"><span class="comment">//创建一个空对象用来保存出现的字符</span></span><br><span class="line"><span class="keyword">var</span> obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> s <span class="keyword">of</span> str)&#123;</span><br><span class="line">    <span class="comment">//首先验证遍历到的字符是否已经在obj对象中</span></span><br><span class="line">   <span class="keyword">if</span>(obj[s]==<span class="literal">undefined</span>)&#123;</span><br><span class="line">       <span class="comment">//如果不存在，向obj中添加该属性，属性值设为1</span></span><br><span class="line">		obj[s]=<span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//如果存在，将该属性值加1</span></span><br><span class="line">		obj[s]++;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">a</span>: <span class="number">2</span>,<span class="attr">b</span>: <span class="number">1</span>,<span class="attr">c</span>: <span class="number">1</span>,<span class="attr">e</span>: <span class="number">1</span>,<span class="attr">h</span>: <span class="number">1</span>,<span class="attr">i</span>: <span class="number">4</span>,<span class="attr">j</span>: <span class="number">1</span>,<span class="attr">n</span>: <span class="number">4</span>,<span class="attr">o</span>: <span class="number">1</span>,<span class="attr">q</span>: <span class="number">1</span>,<span class="attr">t</span>: <span class="number">2</span>,<span class="attr">u</span>: <span class="number">2</span>,<span class="attr">z</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>webpack</title>
+    <url>/2020/08/28/webpack/</url>
+    <content><![CDATA[<h4 id="WebPack的基本使用"><a href="#WebPack的基本使用" class="headerlink" title="WebPack的基本使用"></a>WebPack的基本使用</h4><p>1.webpack的使用场景</p>
+<ul>
+<li><p>创建空白目录，在根目录下运行<code>npm init -y</code>，初始化包管理配置文件<code>package.json</code></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828174143991.png" alt="image-20200828174143991"></p>
+</li>
+<li><p>新建一个src源代码目录</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828174310635.png" alt="image-20200828174310635"></p>
+</li>
+<li><p>在src目录下创建<code>index.html</code>首页</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828174451805.png" alt="image-20200828174451805"></p>
+</li>
+<li><p>初始化首页的基本结构</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第1个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第2个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第3个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第4个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第5个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第6个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第7个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第8个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第9个li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行<code>npm install jquery -S</code>命令，安装<code>jQuery</code></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828174703636.png" alt="image-20200828174703636"></p>
+</li>
+<li><p>在src目录下创建<code>index.js</code>文件，通过以下代码引入jquery</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>敲代码，实现列表隔行变色</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	$(<span class="string">'li:odd'</span>).css(<span class="string">'backgroundColor'</span>,<span class="string">'red'</span>);</span><br><span class="line">	$(<span class="string">'li:even'</span>).css(<span class="string">'backgroundColor'</span>,<span class="string">'yellow'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>index.html</code>文件中使用<code>script</code>标签引入<code>index.js</code>文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./index.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在浏览器中打开<code>index.html</code>文件，发现没有效果，而且会报错，这是因为该程序中使用了ES6的模块化语法，浏览器不支持该语法，所以才报错，解决方法是配置<code>webpack</code>，将代码转换之后在运行</p>
+</li>
+</ul>
+<p>2.webpack的基本配置</p>
+<ul>
+<li><p>运行<code>npm install webpack webpack-cli -D</code>命令，安装<code>webpack</code>相关的包</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828180103297.png" alt="image-20200828180103297"></p>
+</li>
+<li><p>在项目根目录中，创建名为<code>webpack.config.js</code>的<code>webpack</code>配置文件</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828180146391.png" alt="image-20200828180146391"></p>
+</li>
+<li><p>在<code>webpack</code>配置文件中，初始化如下基本配置：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	mode:<span class="string">'development'</span> <span class="comment">//mode 用来指定构建模式，有两种模式 'development'和'production'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>webpack.json</code>配置文件中的<code>scripts</code>节点下，新增<code>dev</code>脚本如下:</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"scripts":&#123;</span><br><span class="line">	"dev":"webpack" //scripts 节点下的脚本，可以通过 npm run 执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在终端中运行<code>npm run dev</code>命令，启动<code>webpack</code>进行项目打包</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828181216923.png" alt="image-20200828181216923"></p>
+</li>
+<li><p>在<code>index.html</code>文件中引入打包后的<code>main.js</code>文件，再次运行<code>index.html</code>文件，发现效果已经出现</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200828181315137.png" alt="image-20200828181315137"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
+<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/07/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -42,35 +132,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>str</title>
-    <url>/2020/08/18/str/</url>
-    <content><![CDATA[<h3 id="面试：JS计算一个字符串中每个字符出现的次数"><a href="#面试：JS计算一个字符串中每个字符出现的次数" class="headerlink" title="面试：JS计算一个字符串中每个字符出现的次数"></a>面试：JS计算一个字符串中每个字符出现的次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"jintiantianqizhenbucuo"</span>;</span><br><span class="line"><span class="comment">//创建一个空对象用来保存出现的字符</span></span><br><span class="line"><span class="keyword">var</span> obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> s <span class="keyword">of</span> str)&#123;</span><br><span class="line">    <span class="comment">//首先验证遍历到的字符是否已经在obj对象中</span></span><br><span class="line">   <span class="keyword">if</span>(obj[s]==<span class="literal">undefined</span>)&#123;</span><br><span class="line">       <span class="comment">//如果不存在，向obj中添加该属性，属性值设为1</span></span><br><span class="line">		obj[s]=<span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//如果存在，将该属性值加1</span></span><br><span class="line">		obj[s]++;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
-
-<p>输出结果为：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">a</span>: <span class="number">2</span>,<span class="attr">b</span>: <span class="number">1</span>,<span class="attr">c</span>: <span class="number">1</span>,<span class="attr">e</span>: <span class="number">1</span>,<span class="attr">h</span>: <span class="number">1</span>,<span class="attr">i</span>: <span class="number">4</span>,<span class="attr">j</span>: <span class="number">1</span>,<span class="attr">n</span>: <span class="number">4</span>,<span class="attr">o</span>: <span class="number">1</span>,<span class="attr">q</span>: <span class="number">1</span>,<span class="attr">t</span>: <span class="number">2</span>,<span class="attr">u</span>: <span class="number">2</span>,<span class="attr">z</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
-<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
 </search>
