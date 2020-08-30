@@ -17,19 +17,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
-<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>webpack</title>
     <url>/2020/08/28/webpack/</url>
     <content><![CDATA[<p>title: webpack<br>date: 2020-08-28 17:06:04<br>tags:<br>    - Webpack<br>categories:<br>    - 前端</p>
@@ -100,9 +87,9 @@
 <h4 id="2-2-配置webpack的自动打包功能"><a href="#2-2-配置webpack的自动打包功能" class="headerlink" title="2.2.配置webpack的自动打包功能"></a>2.2.配置<code>webpack</code>的自动打包功能</h4><p>这个功能是为了保证修改代码后会自动重新打包，效果会自动更新</p>
 <ul>
 <li>运行<code>npm install webpack-dev-server -D</code>命令，安装支持项目自动打包的工具</li>
-<li>修改<code>package.js</code> —&gt; <code>scripts</code>中的<code>dev</code>命令如下：</li>
+<li>修改<code>package.json</code> —&gt; <code>scripts</code>中的<code>dev</code>命令如下：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">"dev"</span>:<span class="string">"webpack-dev-server"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"dev":"webpack-dev-server"</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>将<code>src—&gt;index.html</code>中<code>script</code>脚本的引用路径，修改为”/bundle.js”</li>
@@ -135,8 +122,75 @@
 
 <ul>
 <li>执行<code>npm run dev</code>命令打包，打开<a href="http://localhost:8080/就可以直接看到页面" target="_blank" rel="noopener">http://localhost:8080/就可以直接看到页面</a></li>
+<li>但此时还需要手动打开网址，如果想要运行<code>npm run dev</code>命令后自动打开网页，还需要配置<code>package.json</code>中的信息</li>
 </ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"scripts":&#123;</span><br><span class="line">	"dev":"webpack-dev-server --open "</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>还可以通过添加–host配置ip地址，–port配置端口</li>
+</ul>
+<h4 id="3-打包非js文件"><a href="#3-打包非js文件" class="headerlink" title="3.打包非js文件"></a>3.打包非js文件</h4><p>在开发过程中，<code>webpack</code>默认只能打包js文件，其他非js文件，需要调用loader加载器才可以正常打包，否则会报错。</p>
+<p>loader加载器可以帮助webpack打包处理特定的文件，比如：</p>
+<ol>
+<li><code>less-loader</code>可以打包处理<code>less</code>相关文件</li>
+<li><code>sass-loader</code>可以打包处理<code>sass</code>相关文件</li>
+<li><code>url-loader</code>可以打包处理<code>css</code>中与<code>url</code>路径相关的文件</li>
+</ol>
+<h4 id="3-1打包处理css文件"><a href="#3-1打包处理css文件" class="headerlink" title="3.1打包处理css文件"></a>3.1打包处理css文件</h4><ul>
+<li>运行<code>npm i style-loader css-loader -D</code>命令，安装处理<code>css</code>文件的<code>loader</code></li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，<code>test</code>表示匹配的文件类型，<code>use</code>表示对应要调用的<code>loader</code> ，<code>style-loader</code>，<code>css-loader</code>的顺序不能错，多个<code>loader</code>的调用顺序是从后往前</p>
+<h4 id="3-2打包处理less文件"><a href="#3-2打包处理less文件" class="headerlink" title="3.2打包处理less文件"></a>3.2打包处理less文件</h4><ul>
+<li>运行<code>npm i less-loader less -D</code>命令</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.less$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>less-loader</code>也需要依赖<code>style-loader</code>和<code>css-loader</code>，但是之前安装过了，所以这里不需要再安装。</p>
+<h5 id="注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项"><a href="#注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项" class="headerlink" title="注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项"></a>注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项</h5><h4 id="3-3打包处理scss文件"><a href="#3-3打包处理scss文件" class="headerlink" title="3.3打包处理scss文件"></a>3.3打包处理scss文件</h4><ul>
+<li>运行<code>npm i sass-loader node-sass -D</code>命令</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.sass$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>有时安装<code>node-sass</code>会失败，可以使用<code>npm i node-sass --sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</code>这个命令来安装</p>
+<h4 id="3-4配置postCSS自动添加css的兼容前缀"><a href="#3-4配置postCSS自动添加css的兼容前缀" class="headerlink" title="3.4配置postCSS自动添加css的兼容前缀"></a>3.4配置postCSS自动添加css的兼容前缀</h4><p>先来演示一个的兼容性问题：</p>
+<ul>
+<li>在<code>index.html</code>文件中添加一个<code>input</code>标签</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"测试"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用伪类选择器设置<code>placeholder</code>的文字颜色为红色，打开不同的浏览器看效果会发现这个css属性在不同浏览器中会有兼容性问题</li>
+<li>而每次都要手动添加兼容前缀太麻烦，解决办法就是使用<code>postCSS</code></li>
+</ul>
+<p>使用方法：</p>
+<ul>
+<li>运行<code>npm i postcss-loader autoprefixer -D</code>命令</li>
+<li>在项目根目录下创建<code>postcss</code>的配置文件<code>postcss.config.js</code>，并初始化如下配置：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>) <span class="comment">//打入自动添加前缀的插件</span></span><br><span class="line">moudle.exports=&#123;</span><br><span class="line">	plugins:[ autoprefixer ] <span class="comment">//挂在插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4>]]></content>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/07/26/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="标题一"><a href="#标题一" class="headerlink" title="标题一"></a>标题一</h1><p>内容一</p>
+<h1 id="标题二"><a href="#标题二" class="headerlink" title="标题二"></a>标题二</h1><p>内容二</p>
 ]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
