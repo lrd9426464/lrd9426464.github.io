@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ES6ES7新特性</title>
+    <url>/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><blockquote>
+<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><h4 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h4><p>函数的形参可以设置默认值</p>
+<h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>ES6增加了两种声明变量的方式，其中let声明的变量不会被声明提前，const声明的变量不允许修改</p>
+<h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><h4 id="for…of…遍历查询"><a href="#for…of…遍历查询" class="headerlink" title="for…of…遍历查询"></a>for…of…遍历查询</h4><h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>特例: 只有不希望函数内this与函数外this保持一致时，才不能用箭头函数简写</p>
+<h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><h4 id="展开运算符（用连续的三个点（…）表示）"><a href="#展开运算符（用连续的三个点（…）表示）" class="headerlink" title="展开运算符（用连续的三个点（…）表示）"></a>展开运算符（用连续的三个点（…）表示）</h4></blockquote>
+<h2 id="ES7新特性"><a href="#ES7新特性" class="headerlink" title="ES7新特性"></a>ES7新特性</h2><blockquote>
+<p>1.数组中添加了includes方法，该方法可以判断数组中是否含有指定数据，返回结果为布尔类型，如果存在，返回true；否则返回false。</p>
+<p>2.增加了指数运算符（**）</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/07/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>str</title>
     <url>/2020/08/18/str/</url>
     <content><![CDATA[<h3 id="面试：JS计算一个字符串中每个字符出现的次数"><a href="#面试：JS计算一个字符串中每个字符出现的次数" class="headerlink" title="面试：JS计算一个字符串中每个字符出现的次数"></a>面试：JS计算一个字符串中每个字符出现的次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"jintiantianqizhenbucuo"</span>;</span><br><span class="line"><span class="comment">//创建一个空对象用来保存出现的字符</span></span><br><span class="line"><span class="keyword">var</span> obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> s <span class="keyword">of</span> str)&#123;</span><br><span class="line">    <span class="comment">//首先验证遍历到的字符是否已经在obj对象中</span></span><br><span class="line">   <span class="keyword">if</span>(obj[s]==<span class="literal">undefined</span>)&#123;</span><br><span class="line">       <span class="comment">//如果不存在，向obj中添加该属性，属性值设为1</span></span><br><span class="line">		obj[s]=<span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//如果存在，将该属性值加1</span></span><br><span class="line">		obj[s]++;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
@@ -174,10 +218,32 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>) <span class="comment">//打入自动添加前缀的插件</span></span><br><span class="line">moudle.exports=&#123;</span><br><span class="line">	plugins:[ autoprefixer ] <span class="comment">//挂在插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</p>
+<ul>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4>]]></content>
+<h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4><ul>
+<li>运行<code>npm i url-loader file-loader -D</code>命令</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/</span>,<span class="attr">use</span>:[<span class="string">'url-loader?limit=16940'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中？之后的是loader的参数项。</p>
+<p>limit用来指定图片的大小，单位是字节（byte），只有小于limit大小的图片，才会被转为base64图片</p>
+<h4 id="3-6打包处理js文件中的高级语法"><a href="#3-6打包处理js文件中的高级语法" class="headerlink" title="3.6打包处理js文件中的高级语法"></a>3.6打包处理js文件中的高级语法</h4><ul>
+<li>安装babel转换器相关的包：运行<code>npm i babel-loader @babel/core @babel/runtime -D</code>命令</li>
+<li>安装babel语法插件相关的包：<code>npm i @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D</code></li>
+<li>在项目根目录中，创建<code>babel</code>配置文件<code>babel.config.js</code>并初始化基本配置如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	presets:[<span class="string">'@babel/preset-env'</span>],</span><br><span class="line">	plugins:[<span class="string">'@babel/plugin-transform-runtime'</span>,<span class="string">'@babel/plugin-proposal-class-properties'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//exclude 为排除项，表示babel—&gt;loader不需要处理node_modules中的js文件</span></span><br><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:[<span class="string">'babel-loader'</span>],<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>我的第一篇博客</title>
@@ -190,50 +256,6 @@
       </categories>
       <tags>
         <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/07/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ES6ES7新特性</title>
-    <url>/2020/08/11/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h2><blockquote>
-<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4><h4 id="参数增强"><a href="#参数增强" class="headerlink" title="参数增强"></a>参数增强</h4><p>函数的形参可以设置默认值</p>
-<h4 id="let和const"><a href="#let和const" class="headerlink" title="let和const"></a>let和const</h4><p>ES6增加了两种声明变量的方式，其中let声明的变量不会被声明提前，const声明的变量不允许修改</p>
-<h4 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h4><h4 id="for…of…遍历查询"><a href="#for…of…遍历查询" class="headerlink" title="for…of…遍历查询"></a>for…of…遍历查询</h4><h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><p>特例: 只有不希望函数内this与函数外this保持一致时，才不能用箭头函数简写</p>
-<h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><h4 id="展开运算符（用连续的三个点（…）表示）"><a href="#展开运算符（用连续的三个点（…）表示）" class="headerlink" title="展开运算符（用连续的三个点（…）表示）"></a>展开运算符（用连续的三个点（…）表示）</h4></blockquote>
-<h2 id="ES7新特性"><a href="#ES7新特性" class="headerlink" title="ES7新特性"></a>ES7新特性</h2><blockquote>
-<p>1.数组中添加了includes方法，该方法可以判断数组中是否含有指定数据，返回结果为布尔类型，如果存在，返回true；否则返回false。</p>
-<p>2.增加了指数运算符（**）</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
       </tags>
   </entry>
 </search>

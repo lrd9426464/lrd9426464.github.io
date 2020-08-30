@@ -286,10 +286,32 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>) <span class="comment">//打入自动添加前缀的插件</span></span><br><span class="line">moudle.exports=&#123;</span><br><span class="line">	plugins:[ autoprefixer ] <span class="comment">//挂在插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</p>
+<ul>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</li>
+</ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4> 
+<h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4><ul>
+<li>运行<code>npm i url-loader file-loader -D</code>命令</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/</span>,<span class="attr">use</span>:[<span class="string">'url-loader?limit=16940'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中？之后的是loader的参数项。</p>
+<p>limit用来指定图片的大小，单位是字节（byte），只有小于limit大小的图片，才会被转为base64图片</p>
+<h4 id="3-6打包处理js文件中的高级语法"><a href="#3-6打包处理js文件中的高级语法" class="headerlink" title="3.6打包处理js文件中的高级语法"></a>3.6打包处理js文件中的高级语法</h4><ul>
+<li>安装babel转换器相关的包：运行<code>npm i babel-loader @babel/core @babel/runtime -D</code>命令</li>
+<li>安装babel语法插件相关的包：<code>npm i @babel/preset-env @babel/plugin-transform-runtime @babel/plugin-proposal-class-properties -D</code></li>
+<li>在项目根目录中，创建<code>babel</code>配置文件<code>babel.config.js</code>并初始化基本配置如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	presets:[<span class="string">'@babel/preset-env'</span>],</span><br><span class="line">	plugins:[<span class="string">'@babel/plugin-transform-runtime'</span>,<span class="string">'@babel/plugin-proposal-class-properties'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exclude 为排除项，表示babel—&gt;loader不需要处理node_modules中的js文件</span></span><br><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:[<span class="string">'babel-loader'</span>],<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</span><br></pre></td></tr></table></figure>
+
+ 
       <!-- reward -->
       
     </div>
