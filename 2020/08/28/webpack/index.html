@@ -100,7 +100,7 @@
        
   <p>title: webpack<br>date: 2020-08-28 17:06:04<br>tags:<br>    - Webpack<br>categories:<br>    - 前端</p>
 <h3 id="WebPack的基本使用"><a href="#WebPack的基本使用" class="headerlink" title="WebPack的基本使用"></a>WebPack的基本使用</h3><h4 id="1-webpack的使用场景"><a href="#1-webpack的使用场景" class="headerlink" title="1.webpack的使用场景"></a>1.webpack的使用场景</h4><ul>
-<li><p>创建空白目录，在根目录下运行<code>npm init -y</code>，初始化包管理配置文件`package.json</p>
+<li><p>创建空白目录，在根目录下运行<code>npm init -y</code>，初始化包管理配置文件<code>package.json</code></p>
 <p><img src="/images/image-20200828174143991.png" alt="01"></p>
 </li>
 <li><p>新建一个src源代码目录</p>
@@ -149,8 +149,8 @@
 </ul>
 <h4 id="2-1-配置打包的入口与出口"><a href="#2-1-配置打包的入口与出口" class="headerlink" title="2.1.配置打包的入口与出口"></a>2.1.配置打包的入口与出口</h4><p><code>webpack</code>的4.x版本中默认约定：</p>
 <ul>
-<li>打包的入口文件为src-&gt;index.js</li>
-<li>打包的出口文件为dist-&gt;main.js</li>
+<li>打包的入口文件为<code>src</code>→<code>index.js</code></li>
+<li>打包的出口文件为<code>dist</code>→<code>main.js</code></li>
 </ul>
 <p>如果想修改打包的入口与出口，可以在<code>webpack.config.js</code>中新增如下配置信息：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path=<span class="built_in">require</span>(<span class="string">"path"</span>)</span><br><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">    entry:path.join(__diename,<span class="string">"./src/index.js"</span>), <span class="comment">//打包入口文件</span></span><br><span class="line">    output:&#123;</span><br><span class="line">        filename:“bundle.js, <span class="comment">//输出文件名</span></span><br><span class="line">        path:path.join(__diename,<span class="string">"./dist"</span>) <span class="comment">//输出文件存放路径</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -166,12 +166,12 @@
 <h4 id="2-2-配置webpack的自动打包功能"><a href="#2-2-配置webpack的自动打包功能" class="headerlink" title="2.2.配置webpack的自动打包功能"></a>2.2.配置<code>webpack</code>的自动打包功能</h4><p>这个功能是为了保证修改代码后会自动重新打包，效果会自动更新</p>
 <ul>
 <li>运行<code>npm install webpack-dev-server -D</code>命令，安装支持项目自动打包的工具</li>
-<li>修改<code>package.json</code> —&gt; <code>scripts</code>中的<code>dev</code>命令如下：</li>
+<li>修改<code>package.json</code> → <code>scripts</code>中的<code>dev</code>命令如下：</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"dev":"webpack-dev-server"</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>将<code>src—&gt;index.html</code>中<code>script</code>脚本的引用路径，修改为”/bundle.js”</li>
+<li>将<code>src→index.html</code>中<code>script</code>脚本的引用路径，修改为<code>&quot;/bundle.js&quot;</code></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/bundle.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -200,16 +200,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	plugins:[ htmlplugin ] <span class="comment">//plugins数组是webpack打包期间会用到的一些插件列表</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>执行<code>npm run dev</code>命令打包，打开<a href="http://localhost:8080/就可以直接看到页面" target="_blank" rel="noopener">http://localhost:8080/就可以直接看到页面</a></li>
+<li>执行<code>npm run dev</code>命令打包，打开<code>http://localhost:8080</code>就可以直接看到页面</li>
 <li>但此时还需要手动打开网址，如果想要运行<code>npm run dev</code>命令后自动打开网页，还需要配置<code>package.json</code>中的信息</li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts":&#123;</span><br><span class="line">	"dev":"webpack-dev-server --open "</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>还可以通过添加–host配置ip地址，–port配置端口</li>
+<li>还可以通过添加- -host配置ip地址，- -port配置端口</li>
 </ul>
-<h4 id="3-打包非js文件"><a href="#3-打包非js文件" class="headerlink" title="3.打包非js文件"></a>3.打包非js文件</h4><p>在开发过程中，<code>webpack</code>默认只能打包js文件，其他非js文件，需要调用loader加载器才可以正常打包，否则会报错。</p>
-<p>loader加载器可以帮助webpack打包处理特定的文件，比如：</p>
+<h4 id="3-打包非js文件"><a href="#3-打包非js文件" class="headerlink" title="3.打包非js文件"></a>3.打包非js文件</h4><p>在开发过程中，<code>webpack</code>默认只能打包js文件，其他非js文件，需要调用<code>loader</code>加载器才可以正常打包，否则会报错。</p>
+<p><code>loader</code>加载器可以帮助<code>webpack</code>打包处理特定的文件，比如：</p>
 <ol>
 <li><code>less-loader</code>可以打包处理<code>less</code>相关文件</li>
 <li><code>sass-loader</code>可以打包处理<code>sass</code>相关文件</li>
@@ -217,21 +217,21 @@
 </ol>
 <h4 id="3-1打包处理css文件"><a href="#3-1打包处理css文件" class="headerlink" title="3.1打包处理css文件"></a>3.1打包处理css文件</h4><ul>
 <li>运行<code>npm i style-loader css-loader -D</code>命令，安装处理<code>css</code>文件的<code>loader</code></li>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其中，<code>test</code>表示匹配的文件类型，<code>use</code>表示对应要调用的<code>loader</code> ，<code>style-loader</code>，<code>css-loader</code>的顺序不能错，多个<code>loader</code>的调用顺序是从后往前</p>
 <h4 id="3-2打包处理less文件"><a href="#3-2打包处理less文件" class="headerlink" title="3.2打包处理less文件"></a>3.2打包处理less文件</h4><ul>
 <li>运行<code>npm i less-loader less -D</code>命令</li>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.less$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'less-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>less-loader</code>也需要依赖<code>style-loader</code>和<code>css-loader</code>，但是之前安装过了，所以这里不需要再安装。</p>
 <h5 id="注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项"><a href="#注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项" class="headerlink" title="注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项"></a>注意：每当需要处理一个不同类型的文件，都需要在rules中新增一项</h5><h4 id="3-3打包处理scss文件"><a href="#3-3打包处理scss文件" class="headerlink" title="3.3打包处理scss文件"></a>3.3打包处理scss文件</h4><ul>
 <li>运行<code>npm i sass-loader node-sass -D</code>命令</li>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//所有第三方文件模块的匹配规则</span></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.sass$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'sass-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -251,16 +251,16 @@
 <li>运行<code>npm i postcss-loader autoprefixer -D</code>命令</li>
 <li>在项目根目录下创建<code>postcss</code>的配置文件<code>postcss.config.js</code>，并初始化如下配置：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>) <span class="comment">//打入自动添加前缀的插件</span></span><br><span class="line">moudle.exports=&#123;</span><br><span class="line">	plugins:[ autoprefixer ] <span class="comment">//挂在插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> autoprefixer = <span class="built_in">require</span>(<span class="string">'autoprefixer'</span>) <span class="comment">//打入自动添加前缀的插件</span></span><br><span class="line">moudle.exports=&#123;</span><br><span class="line">	plugins:[ autoprefixer ] <span class="comment">//挂载插件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，修改<code>css</code>的<code>loader</code>规则如下：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.css$/</span>,<span class="attr">use</span>:[<span class="string">'style-loader'</span>,<span class="string">'css-loader'</span>,<span class="string">'postcss-loader'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-5打包图片和文字文件"><a href="#3-5打包图片和文字文件" class="headerlink" title="3.5打包图片和文字文件"></a>3.5打包图片和文字文件</h4><ul>
 <li>运行<code>npm i url-loader file-loader -D</code>命令</li>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下：</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，添加<code>loader</code>规则如下：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">moudle:&#123;</span><br><span class="line">	rules:[</span><br><span class="line">		&#123;<span class="attr">test</span>:<span class="regexp">/\.jpg|png|gif|bmp|ttf|eot|svg|woff|woff2$/</span>,<span class="attr">use</span>:[<span class="string">'url-loader?limit=16940'</span>]&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -274,9 +274,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">	presets:[<span class="string">'@babel/preset-env'</span>],</span><br><span class="line">	plugins:[<span class="string">'@babel/plugin-transform-runtime'</span>,<span class="string">'@babel/plugin-proposal-class-properties'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>在<code>webpack.config.js</code>的<code>moudle</code>—&gt;<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
+<li>在<code>webpack.config.js</code>的<code>moudle</code>→<code>rules</code>数组中，添加<code>loader</code>规则如下</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exclude 为排除项，表示babel—&gt;loader不需要处理node_modules中的js文件</span></span><br><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:[<span class="string">'babel-loader'</span>],<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//exclude 为排除项，表示babel→loader不需要处理node_modules中的js文件</span></span><br><span class="line">&#123;<span class="attr">test</span>:<span class="regexp">/\.js$/</span>,<span class="attr">use</span>:[<span class="string">'babel-loader'</span>],<span class="attr">exclude</span>:<span class="regexp">/node_modules/</span>&#125;</span><br></pre></td></tr></table></figure>
 
  
       <!-- reward -->
