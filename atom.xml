@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-31T04:19:56.342Z</updated>
+  <updated>2020-10-13T07:41:51.182Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>origin</title>
+    <link href="http://yoursite.com/2020/10/13/origin/"/>
+    <id>http://yoursite.com/2020/10/13/origin/</id>
+    <published>2020-10-13T07:35:35.000Z</published>
+    <updated>2020-10-13T07:41:51.182Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在根目录下创建&lt;code&gt;vue.config.js&lt;/code&gt;文件，文件内配置如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack</title>

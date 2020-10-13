@@ -105,6 +105,61 @@
     
     
     <article
+  id="post-origin"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/10/13/origin/"
+    >origin</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/10/13/origin/" class="article-date">
+  <time datetime="2020-10-13T07:35:35.000Z" itemprop="datePublished">2020-10-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在根目录下创建<code>vue.config.js</code>文件，文件内配置如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">devServer: &#123;</span><br><span class="line">	open: <span class="literal">true</span>,</span><br><span class="line">	host: <span class="string">'localhost'</span>,</span><br><span class="line">	port: <span class="number">8080</span>,</span><br><span class="line">	https: <span class="literal">false</span>,</span><br><span class="line">	<span class="comment">//以上的ip和端口是我们本机的;下面为需要跨域的</span></span><br><span class="line">	proxy: &#123;<span class="comment">//配置跨域</span></span><br><span class="line">		<span class="string">'/api'</span>: &#123;</span><br><span class="line">		target: <span class="string">'https://wis.qq.com/weather/'</span>,<span class="comment">//这里后台的地址模拟的;应该填写你们真实的后台接口</span></span><br><span class="line">		ws: <span class="literal">true</span>,</span><br><span class="line">		changOrigin: <span class="literal">true</span>,<span class="comment">//允许跨域</span></span><br><span class="line">		pathRewrite: &#123;</span><br><span class="line">		<span class="string">'^/api'</span>: <span class="string">''</span><span class="comment">//请求的时候使用这个api就可以</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%A8%E5%9F%9F/" rel="tag">跨域</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-webpack"
   class="article article-type-post"
   itemscope
