@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Map</title>
+    <url>/2020/07/26/Map/</url>
+    <content><![CDATA[<h4 id="通过经纬度计算两个位置的距离"><a href="#通过经纬度计算两个位置的距离" class="headerlink" title="通过经纬度计算两个位置的距离"></a>通过经纬度计算两个位置的距离</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法定义 lat,lng</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetDistance</span>(<span class="params"> lat1,  lng1,  lat2,  lng2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> radLat1 = lat1*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> radLat2 = lat2*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> a = radLat1 - radLat2;</span><br><span class="line">  <span class="keyword">var</span>  b = lng1*<span class="built_in">Math</span>.PI / <span class="number">180.0</span> - lng2*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> s = <span class="number">2</span> * <span class="built_in">Math</span>.asin(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(a/<span class="number">2</span>),<span class="number">2</span>) +</span><br><span class="line">  <span class="built_in">Math</span>.cos(radLat1)*<span class="built_in">Math</span>.cos(radLat2)*<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(b/<span class="number">2</span>),<span class="number">2</span>)));</span><br><span class="line">  s = s *<span class="number">6378.137</span> ;*<span class="comment">// EARTH_RADIUS;*</span></span><br><span class="line">  s = <span class="built_in">Math</span>.round(s * <span class="number">10000</span>) / <span class="number">10000</span>;</span><br><span class="line">  <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用 return的距离单位为km</span></span><br><span class="line">GetDistance(<span class="number">10.0</span>,<span class="number">113.0</span>,<span class="number">12.0</span>,<span class="number">114.0</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>地图</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/07/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -39,6 +52,25 @@
       </tags>
   </entry>
   <entry>
+    <title>slot</title>
+    <url>/2020/10/15/slot/</url>
+    <content><![CDATA[<p>使用插槽可以在子组件中显示父组件中的内容：</p>
+<p>首先在子组件中需要插入内容的地方添加<code>slot</code>标签和<code>name</code>属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;son&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;list_1&quot;&gt;</span><br><span class="line">      我是测试的子组件</span><br><span class="line">      &lt;slot name&#x3D;&quot;list_1&quot;&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后再父组件中引入子组件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;son&quot;&gt;</span><br><span class="line">    我是ceshi组件</span><br><span class="line">    &lt;my-son&gt;</span><br><span class="line">		&lt;template #list_1&gt;&#123;&#123;name&#125;&#125;&lt;&#x2F;template&gt;</span><br><span class="line">	&lt;&#x2F;my-son&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>&lt;my-son&gt;</code>是子组件，通过<code>template</code>标签插入所需要的内容，其中<code>#</code>后面紧跟子组件中<code>slot</code>标签的<code>name</code>属性值，一一对应。</p>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>插槽</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>str</title>
     <url>/2020/08/18/str/</url>
     <content><![CDATA[<h3 id="面试：JS计算一个字符串中每个字符出现的次数"><a href="#面试：JS计算一个字符串中每个字符出现的次数" class="headerlink" title="面试：JS计算一个字符串中每个字符出现的次数"></a>面试：JS计算一个字符串中每个字符出现的次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"jintiantianqizhenbucuo"</span>;</span><br><span class="line"><span class="comment">//创建一个空对象用来保存出现的字符</span></span><br><span class="line"><span class="keyword">var</span> obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> s <span class="keyword">of</span> str)&#123;</span><br><span class="line">    <span class="comment">//首先验证遍历到的字符是否已经在obj对象中</span></span><br><span class="line">   <span class="keyword">if</span>(obj[s]==<span class="literal">undefined</span>)&#123;</span><br><span class="line">       <span class="comment">//如果不存在，向obj中添加该属性，属性值设为1</span></span><br><span class="line">		obj[s]=<span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">//如果存在，将该属性值加1</span></span><br><span class="line">		obj[s]++;	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure>
@@ -52,19 +84,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Map</title>
-    <url>/2020/07/26/Map/</url>
-    <content><![CDATA[<h4 id="通过经纬度计算两个位置的距离"><a href="#通过经纬度计算两个位置的距离" class="headerlink" title="通过经纬度计算两个位置的距离"></a>通过经纬度计算两个位置的距离</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 方法定义 lat,lng</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetDistance</span>(<span class="params"> lat1,  lng1,  lat2,  lng2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> radLat1 = lat1*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> radLat2 = lat2*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> a = radLat1 - radLat2;</span><br><span class="line">  <span class="keyword">var</span>  b = lng1*<span class="built_in">Math</span>.PI / <span class="number">180.0</span> - lng2*<span class="built_in">Math</span>.PI / <span class="number">180.0</span>;</span><br><span class="line">  <span class="keyword">var</span> s = <span class="number">2</span> * <span class="built_in">Math</span>.asin(<span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(a/<span class="number">2</span>),<span class="number">2</span>) +</span><br><span class="line">  <span class="built_in">Math</span>.cos(radLat1)*<span class="built_in">Math</span>.cos(radLat2)*<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(b/<span class="number">2</span>),<span class="number">2</span>)));</span><br><span class="line">  s = s *<span class="number">6378.137</span> ;*<span class="comment">// EARTH_RADIUS;*</span></span><br><span class="line">  s = <span class="built_in">Math</span>.round(s * <span class="number">10000</span>) / <span class="number">10000</span>;</span><br><span class="line">  <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用 return的距离单位为km</span></span><br><span class="line">GetDistance(<span class="number">10.0</span>,<span class="number">113.0</span>,<span class="number">12.0</span>,<span class="number">114.0</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>地图</tag>
       </tags>
   </entry>
   <entry>

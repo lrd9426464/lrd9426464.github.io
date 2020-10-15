@@ -105,6 +105,66 @@
     
     
     <article
+  id="post-slot"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/10/15/slot/"
+    >slot</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/10/15/slot/" class="article-date">
+  <time datetime="2020-10-15T02:09:53.000Z" itemprop="datePublished">2020-10-15</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>使用插槽可以在子组件中显示父组件中的内容：</p>
+<p>首先在子组件中需要插入内容的地方添加<code>slot</code>标签和<code>name</code>属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;son&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;list_1&quot;&gt;</span><br><span class="line">      我是测试的子组件</span><br><span class="line">      &lt;slot name&#x3D;&quot;list_1&quot;&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后再父组件中引入子组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;son&quot;&gt;</span><br><span class="line">    我是ceshi组件</span><br><span class="line">    &lt;my-son&gt;</span><br><span class="line">		&lt;template #list_1&gt;&#123;&#123;name&#125;&#125;&lt;&#x2F;template&gt;</span><br><span class="line">	&lt;&#x2F;my-son&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>&lt;my-son&gt;</code>是子组件，通过<code>template</code>标签插入所需要的内容，其中<code>#</code>后面紧跟子组件中<code>slot</code>标签的<code>name</code>属性值，一一对应。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8F%92%E6%A7%BD/" rel="tag">插槽</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+   
+</article>
+
+    
+    <article
   id="post-origin"
   class="article article-type-post"
   itemscope

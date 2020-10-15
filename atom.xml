@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-13T07:41:51.182Z</updated>
+  <updated>2020-10-15T02:17:57.052Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>slot</title>
+    <link href="http://yoursite.com/2020/10/15/slot/"/>
+    <id>http://yoursite.com/2020/10/15/slot/</id>
+    <published>2020-10-15T02:09:53.000Z</published>
+    <updated>2020-10-15T02:17:57.052Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用插槽可以在子组件中显示父组件中的内容：&lt;/p&gt;
+&lt;p&gt;首先在子组件中需要插入内容的地方添加&lt;code&gt;slot&lt;/code&gt;标签和&lt;code&gt;name&lt;/code&gt;属性&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="插槽" scheme="http://yoursite.com/tags/%E6%8F%92%E6%A7%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>origin</title>
